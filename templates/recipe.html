@@ -1,26 +1,70 @@
 {% extends 'base.html' %} {% block content %}
 
-<ul class="">
-	{% for recipe in recipes %}
-    <li>
-	 <div class="">
-          <div class="">
-                    <i class="">expand_more</i>
-                    <a href="{{url_for('delete_recipe', recipe_id=recipe_id)}}" class="">Done</a>
-                    <a href="{{url_for('edit_recipe', recipe_id=recipe_id)}}"class="">Edit</a>
-                    
-                </div>
-                <div class="">
-                    <i class="">expand_more</i><strong>{{recipe.recipe_name}}</strong> 
-                </div>
-            </div>
-            <div class="">
-                <span>
-                    {{style.task_description}}
-                </span>
-            </div>
-    </li>
-	{% endfor %}
-</ul>
 
-{% endblock %}
+
+{% for menu in menus %}
+<div class="container-fluid col-md-6">
+	<div class="row">
+		<div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
+			<div class="post-preview">
+				<h2 class="post-title">
+					Explore Our Menus!
+				</h2>
+			</div>
+			<hr>
+			<div class="col-lg-8 col-md-10 mx-auto">
+			</div>
+			<div class="post-preview">
+				<div class="media-left hidden-xs">
+					<img src="https://www.hospitalityandcateringnews.com/wp-content/uploads/2019/10/perfect-eggs-all-day-every-day.jpg" class="img-circle media-object" height=100 width=100>
+                    </div>
+					<a href="post.html">
+						<h2 class="post-title">
+							{{ menu.menu_type }}
+						</h2>
+					</a>
+					<p class="post-meta">Posted by
+						<a href="#">Start Bootstrap</a>
+						on September 18, 2019</p>
+				</div>
+				<hr>
+				<div class="post-preview container-fluid">
+					<div class="media-left hidden-xs col-md-6">
+						<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2015%2F08%2Fmain%2F1509p124-lunch-turkey-swiss-wrap-carrot-salad_0.jpg%3Fitok%3D4zkB0eOt&w=400&q=85" class="img-circle media-object" height=100 width=100>
+                    </div>
+						<a href="post.html">
+							<h2 class="post-title">
+								Snacks for the day
+							</h2>
+						</a>
+						<p class="post-meta">Posted by
+							<a href="#">Start Bootstrap</a>
+							on August 24, 2019</p>
+					</div>
+					<hr>
+					<div class="post-preview">
+                    <div class="media-left hidden-xs container-fluid">
+						<img src="https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/mrtrending0470.jpg?itok=PdSpu3Af" class="img-circle media-object" height=100 width=100>
+                    </div>
+						<a href="post.html">
+							<h2 class="post-title">
+								Dinner
+							</h2>
+						</a>
+						<p class="post-meta">Posted by
+							<a href="#">Start Bootstrap</a>
+							on July 8, 2019</p>
+					</div>
+					<hr>
+					<!-- Pager -->
+					<div class="clearfix">
+						<a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+
+
+
+		{% endblock %}

@@ -11,8 +11,19 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
-@app.route('/')
 
-@app.route('/get_recipes')
-def get_recipes():
-    return render_template("recipe.html", recipe=mongo.db.recipes.find())
+@app.route('/')
+@app.route('/get_menus')
+def get_menus():
+    return render_template("recipe.html", recipes=mongo.db.menu.find())
+
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes =  mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_tasks'))
+
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP', '127.0.0.1'),
+            port=int(os.environ.get('PORT', '8080')),
+            debug=True)
