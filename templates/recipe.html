@@ -1,8 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 
-
-
-{% for menu in menus %}
 <div class="container-fluid col-md-6">
 	<div class="row">
 		<div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
@@ -14,57 +11,27 @@
 			<hr>
 			<div class="col-lg-8 col-md-10 mx-auto">
 			</div>
+			{% for menu in menus %}
 			<div class="post-preview">
-				<div class="media-left hidden-xs">
-					<img src="https://www.hospitalityandcateringnews.com/wp-content/uploads/2019/10/perfect-eggs-all-day-every-day.jpg" class="img-circle media-object" height=100 width=100>
-                    </div>
-					<a href="breakfast.html">
-						<h2 class="post-title">
-							{{ menu.menu_type }}
-						</h2>
-					</a>
-					<p class="post-meta">Posted by
-						<a href="#">Start Bootstrap</a>
-						on September 18, 2019</p>
-				</div>
-				<hr>
-				<div class="post-preview container-fluid">
-					<div class="media-left hidden-xs col-md-6">
-						<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2015%2F08%2Fmain%2F1509p124-lunch-turkey-swiss-wrap-carrot-salad_0.jpg%3Fitok%3D4zkB0eOt&w=400&q=85" class="img-circle media-object" height=100 width=100>
-                    </div>
-						<a href="post.html">
-							<h2 class="post-title">
-								Snacks for the day
-							</h2>
-						</a>
-						<p class="post-meta">Posted by
-							<a href="#">Start Bootstrap</a>
-							on August 24, 2019</p>
-					</div>
-					<hr>
-					<div class="post-preview">
-                    <div class="media-left hidden-xs container-fluid">
-						<img src="https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/mrtrending0470.jpg?itok=PdSpu3Af" class="img-circle media-object" height=100 width=100>
-                    </div>
-						<a href="post.html">
-							<h2 class="post-title">
-								Dinner
-							</h2>
-						</a>
-						<p class="post-meta">Posted by
-							<a href="#">Start Bootstrap</a>
-							on July 8, 2019</p>
-					</div>
-					<hr>
-					<!-- Pager -->
-					<div class="clearfix">
-						<a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-					</div>
-				</div>
+				<img src= {{ menu.img }} class="img-circle media-object col-md-6" height=100 width=100>
+				<a href="{{url_for('get_breakfast')}}">
+					<h3 class="post-title">
+						{{ menu.menu_type }}
+					</h3>
+				</a>
+				<p class="post-meta">Posted by
+					<a href="#">Start Bootstrap</a>
+					on September 18, 2019</p>
+			</div>
+			<hr>
+			{% endfor %}
+			<hr>
+			<!-- Pager -->
+			<div class="clearfix">
+				<a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
 			</div>
 		</div>
-        {% endfor %}
+	</div>
+</div>
 
-
-
-		{% endblock %}
+{% endblock %}
