@@ -4,7 +4,7 @@
 		<div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
 			<div class="post-preview">
 				<h2 class="post-title">
-					Breakfast Menu
+					Lunch Menu
 				</h2>
 			</div>
 			<hr>
@@ -12,7 +12,7 @@
 			</div>
 			{% for recipe in recipes %}
 			<div class="post-preview">
-				<a href="{{url_for('get_breakfast')}}">
+				<a href="{{url_for('get_lunch')}}">
 					<h3 class="post-title">
 						{{ recipe.dish }}
 					</h3>
@@ -20,21 +20,23 @@
 
 				<p class="post-meta">
                 <span>Time :</span>
-                   {{ recipe.time }}
-                </p>
-                <p>
+					{{ recipe.time }}
+				</p>
+				<p>
                 <span>Cost :</span>
-                  {{ recipe.cost }}
-                </p>
-                <p>
+					{{ recipe.cost }}
+				</p>
+				<p>
                 <span>Ingredients :</span>
-                  {{ recipe.ingredients }}
-                </p>
-            
+					{{ recipe.ingredients }}
+				</p>
+                
+				
+
 			</div>
-            {% endfor %}
+			{% endfor %}
 			<hr>
-			
+
 			<hr>
 			<!-- Pager -->
 			<div class="clearfix">

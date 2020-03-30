@@ -13,19 +13,26 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_menus')
+@app.route('/menus')
 def get_menus():
     return render_template("recipe.html", menus=mongo.db.menu.find())
 
-@app.route('/get_breakfast')
+
+@app.route('/menus/breakfast')
 def get_breakfast():
-    return render_template("breakfast.html", recipes=mongo.db.recipes.find())
+    return render_template("breakfast.html", recipes=mongo.db.recipes.find({"menu_type": "breakfast"}))
+
+@app.route('/menus/lunch')
+def get_lunch():
+    return render_template("lunch.html", recipes=mongo.db.recipes.find({"menu_type": "lunch"}))
+
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
-    recipes =  mongo.db.recipes
+    recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_tasks'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '127.0.0.1'),
