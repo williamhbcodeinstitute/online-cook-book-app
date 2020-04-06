@@ -26,12 +26,18 @@ def get_breakfast():
 def get_lunch():
     return render_template("lunch.html", recipes=mongo.db.recipes.find({"menu_type": "lunch"}))
 
+@app.route('/menus/dinner')
+def get_dinner():
+    return render_template("dinner.html", recipes=mongo.db.recipes.find({"menu_type": "dinner"}))
 
-@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
-    recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
+@app.route('/menus/desert')
+def get_desert():
+    return render_template("desert.html", recipes=mongo.db.recipes.find({"menu_type": "desert"}))
+
+
+@app.route('/menus/addrecipe')
+def add_recipe():
+    return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
 
 
 if __name__ == '__main__':
