@@ -37,7 +37,13 @@ def get_desert():
 
 @app.route('/menus/addrecipe')
 def add_recipe():
-    return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
+    return render_template("addrecipe.html",  menus=mongo.db.menu.find())
+
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_menus'))
 
 
 if __name__ == '__main__':

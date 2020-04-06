@@ -3,36 +3,36 @@
 <row class="col-md-6">
 <h3> Add Recipe </h3>
 
-<form action ="" method="POST" class="">
+<form action ="{{ url_for('insert_recipe') }}" method="POST" class="">
   
   <div class="form-group col-md-12">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Choose menu</label>
     <select class="form-control" id="recipes" name="recipes">
-      <option value=""disabled>Choose menu</option>
-      {% for recipe in recipes %}
-      <option value="{{recipes.menu_type}}">{{recipes.menu_type}}</option>
+      
+      {% for menu in menus %}
+      <option >"{{ menu.menu_type }}"</option>
       {% endfor %}
     </select>
   </div>
-
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <label for="exampleFormControlTextarea1">Dish</label>
+    <textarea class="form-control" id="dish" name="dish" type="text"></textarea>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+    <label for="exampleFormControlTextarea1">Time</label>
+    <textarea class="form-control" id="time" name="time" type="text"></textarea>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1">Cost</label>
+    <textarea class="form-control" id="cost" name="cost" type="text"></textarea>
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Ingredients</label>
+    <textarea class="form-control" id="ingredients" name="ingredients" type="text"></textarea>
+  </div>
+  <div class="clearfix">
+				<a class="btn btn-primary float-left" type="submit" name="action" href="#">Add Recipe &rarr;</a>
+			</div>
 </form>
 </row>
 </div>
