@@ -3,7 +3,7 @@
 <row class="col-md-6">
 <h3> Add Recipe </h3>
 
-<form action ="{{ url_for('insert_recipe') }}" method="POST" class="">
+<form action ="{{ url_for('insert_recipe') }}" method="POST" name="recipes">
   
   <div class="form-group col-md-12">
     <label for="exampleFormControlSelect1">Choose menu</label>
@@ -30,9 +30,9 @@
     <label for="exampleFormControlTextarea1">Ingredients</label>
     <textarea class="form-control" id="ingredients" name="ingredients" type="text"></textarea>
   </div>
-  <div class="clearfix">
-				<a class="btn btn-primary float-left" type="submit" name="action" href="#">Add Recipe &rarr;</a>
-			</div>
+  <button class="btn" type="submit" name="action">Add Task
+    <i class="">send</i>
+  </button>
 </form>
 </row>
 </div>
