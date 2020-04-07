@@ -15,7 +15,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/menus')
 def get_menus():
-    return render_template("recipe.html", menus=mongo.db.menu.find())
+    return render_template("index.html", menus=mongo.db.menu.find())
 
 
 @app.route('/menus/breakfast')
@@ -30,9 +30,9 @@ def get_lunch():
 def get_dinner():
     return render_template("dinner.html", recipes=mongo.db.recipes.find({"menu_type": "dinner"}))
 
-@app.route('/menus/desert')
-def get_desert():
-    return render_template("desert.html", recipes=mongo.db.recipes.find({"menu_type": "desert"}))
+@app.route('/menus/dessert')
+def get_dessert():
+    return render_template("dessert.html", recipes=mongo.db.recipes.find({"menu_type": "desert"}))
 
 
 @app.route('/menus/addrecipe')
