@@ -35,7 +35,7 @@ def get_dessert():
     return render_template("dessert.html", recipes=mongo.db.recipes.find({"menu_type": "dessert"}))
 
 
-@app.route('/menus/addrecipe')
+@app.route('/menus/add_recipe')
 def add_recipe():
     return render_template("addrecipe.html",  menus=mongo.db.menu.find())
 

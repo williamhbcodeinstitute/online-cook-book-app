@@ -7,10 +7,10 @@
   
   <div class="form-group col-md-12">
     <label for="exampleFormControlSelect1">Choose menu</label>
-    <select class="form-control" id="recipes" name="recipes">
+    <select class="form-control" id="menu_type" name="menu_type">
       
       {% for menu in menus %}
-      <option >"{{ menu.menu_type }}"</option>
+      <option >{{ menu.menu_type }}</option>
       {% endfor %}
     </select>
   </div>
