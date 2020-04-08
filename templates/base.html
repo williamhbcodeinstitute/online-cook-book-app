@@ -30,10 +30,10 @@
           Menu
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         <a class="nav-link" href="{{url_for('get_breakfast')}}">Breakfast</a>
-         <a class="nav-link" href="{{url_for('get_lunch')}}">Lunch</a>
-         <a class="nav-link" href="{{url_for('get_dinner')}}">Dinner</a>
-         <a class="nav-link" href="{{url_for('get_dessert')}}">Dessert</a>
+         <a class="nav-link" href="{{url_for('get_menu_details', menu_type='breakfast')}}">Breakfast</a>
+         <a class="nav-link" href="{{url_for('get_menu_details', menu_type='lunch')}}">Lunch</a>
+         <a class="nav-link" href="{{url_for('get_menu_details', menu_type='dinner')}}">Dinner</a>
+         <a class="nav-link" href="{{url_for('get_menu_details', menu_type='dessert')}}">Dessert</a> 
         </div>
       </li>
           <li class="nav-item">

@@ -18,21 +18,18 @@ def get_menus():
     return render_template("index.html", menus=mongo.db.menu.find())
 
 
-@app.route('/menus/breakfast')
-def get_breakfast():
-    return render_template("breakfast.html", recipes=mongo.db.recipes.find({"menu_type": "breakfast"}))
-
-@app.route('/menus/lunch')
-def get_lunch():
-    return render_template("lunch.html", recipes=mongo.db.recipes.find({"menu_type": "lunch"}))
-
-@app.route('/menus/dinner')
-def get_dinner():
-    return render_template("dinner.html", recipes=mongo.db.recipes.find({"menu_type": "dinner"}))
-
-@app.route('/menus/dessert')
-def get_dessert():
-    return render_template("dessert.html", recipes=mongo.db.recipes.find({"menu_type": "dessert"}))
+@app.route('/menu/<menu_type>')
+def get_menu_details(menu_type):
+    title = ''
+    if menu_type == 'breakfast':
+        title = 'Breakfast Menu'
+    elif menu_type == 'lunch':
+        title = 'Lunch Menu'
+    elif menu_type == 'dinner':
+        title = 'Dinner Menu'
+    elif menu_type == 'dessert':
+        title = 'Dinner Menu'
+    return render_template('menu_details.html', recipes=mongo.db.recipes.find({"menu_type": menu_type}), title=title)
 
 
 @app.route('/menus/add_recipe')
