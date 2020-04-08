@@ -32,7 +32,7 @@ def get_dinner():
 
 @app.route('/menus/dessert')
 def get_dessert():
-    return render_template("dessert.html", recipes=mongo.db.recipes.find({"menu_type": "desert"}))
+    return render_template("dessert.html", recipes=mongo.db.recipes.find({"menu_type": "dessert"}))
 
 
 @app.route('/menus/addrecipe')
