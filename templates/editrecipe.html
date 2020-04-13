@@ -2,13 +2,14 @@
 <div>
 
 <h3> Add Recipe </h3>
-<form class="form-group" action ="{{ url_for('insert_recipe') }}" method="POST" name="recipes">
+<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col-md-12">
   <div class="container">
             <div class="row">
   <div class="form-group container-fluid col-md-12">
     
     <select class="form-control" id="menu_type" name="menu_type">
       {% for menu in menus %}
+                      {% if cat.category_name == task.category_name%}
       <option >{{ menu.menu_type }}</option>
       {% endfor %}
     </select>
@@ -36,9 +37,10 @@
   <button class="btn btn-primary col-md-4" type="submit">Add Recipe
     <i class="">send</i>
   </button>
+</div>
+</div>
 </form>
 </div>
-</div>
-</div>
+
 
 {% endblock %}

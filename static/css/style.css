@@ -9,3 +9,41 @@
     background-color: #f5f5f5;
     background-image: none;
 }
+
+body {
+  font-size: 20px;
+  color: #212529;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background-image: url('https://www.thespruce.com/thmb/w-nbIo_3O0gOsDksifG74jQ2FXg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp82d5a417ngj100_Medium_1422699-5a0b7621845b34003b324689.jpg');
+  color: white;
+  font-size: 30px;
+}
+
+.header-img {
+ background-image: url('https://www.thespruce.com/thmb/w-nbIo_3O0gOsDksifG74jQ2FXg=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp82d5a417ngj100_Medium_1422699-5a0b7621845b34003b324689.jpg');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.btn-add-edit {
+
+    height:24px;
+    width:60px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 3em;
+
+}
