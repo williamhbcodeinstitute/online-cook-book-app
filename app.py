@@ -42,10 +42,17 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_menus'))
 
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_recipes = mongo.db.recipes.find()
+    return render_template('editrecipe.html', recipes=the_recipe,
+                           recipe=all_recipes)
+
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
-    recipes = mongo.db.recipes
-    recipes.update({'_id': ObjectId(recipe_id)},
+    recipe = mongo.db.recipes
+    recipe.update({'_id': ObjectId(recipe_id)},
     {
         'menu_type': request.form.get('menu_type'),
         'dish': request.form.get('dish'),
