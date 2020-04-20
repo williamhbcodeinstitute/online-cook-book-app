@@ -52,8 +52,7 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     recipe = mongo.db.recipes
-    recipe.update({'_id': ObjectId(recipe_id)},
-    {
+    recipe.update({'_id': ObjectId(recipe_id)}, {
         'menu_type': request.form.get('menu_type'),
         'dish': request.form.get('dish'),
         'time': request.form.get('time'),

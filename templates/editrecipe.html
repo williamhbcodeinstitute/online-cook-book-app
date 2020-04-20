@@ -8,9 +8,10 @@
   <div class="form-group container-fluid col-md-12">
     
     <select class="form-control" id="menu_type" name="menu_type">
-      {% for recipe in recipes %}
-                      {% if recipes.menu_type == recipes.menu_type %}
-      <option>{{ recipes.menu_type }}</option>
+      {% for menu in menus %}
+                
+      <option>{{ menu.menu_type }}</option>
+      
     {% endfor %}
     </select>
     
