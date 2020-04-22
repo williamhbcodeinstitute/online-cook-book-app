@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"> 
 
-
-    
-    <title>Cook Book</title>
+<title>Cook Book</title>
 </head>
 <body>
 <header>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.html">Cook Book</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,22 +44,20 @@
 
   <!-- Page Header -->
  
-    <div class="overlay"></div>
-      <div class="row header-img">
-        <div class="col-lg-12 col-md-12">
-          <div class="text-center col-md-12">
-            <h1>H's Savings Cook Book</h1>
-            <span class="subheading">Cheap and Quick meals to cook at home!</span>
-          </div>
+   <div class="header-img header">
+        <div class="row col-md-12">
+            <div class="row col-xs-12 col-md-12  text-center">
+                <h1 class="heading-1 text-center"> H's Savings Cook Book </h1>
+            </div>
         </div>
-      </div>
-  </header>
+
+    </div>
 
   <!-- Main Content -->
    <div class="container">
         {% block content %} {% endblock %}
     </div>
-  <hr>
+
 
   <!-- Footer -->
   <footer>

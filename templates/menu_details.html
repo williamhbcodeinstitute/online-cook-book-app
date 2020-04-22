@@ -35,9 +35,9 @@
 					{{ recipe.preparation }}
 				</p>
 			</div>
-            <div class="clearfix row">
-				<a class="btn btn-primary btn-add-edit float-right" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete recipe &rarr;</a>
-                <a class="btn btn-primary btn-add-edit float-right" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit recipe &rarr;</a>
+            <div class="clearfix row ">
+				<a class="btn btn-primary" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete recipe &rarr;</a>
+                <a class="btn btn-primary" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit recipe &rarr;</a>
 			</div>
             {% endfor %}
 			<hr>
