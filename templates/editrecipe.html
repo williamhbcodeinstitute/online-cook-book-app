@@ -3,47 +3,44 @@
 
 <h3> Edit Recipe </h3>
 <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col-md-12">
-  <div class="container">
-   <div class="row">
-  <div class="form-group container-fluid col-md-12">
-    
-    <select class="form-control" id="menu_type" name="menu_type">
-      
-      {% for recipe in recipes %}
-      <option>{{ recipe.menu_type }}</option>
-      {% endfor %}
-    
-    </select>
-    
-  </div>
-  <div class=" col-md-12">
-    <label for="exampleFormControlTextarea1">Dish</label>
-    <textarea class="form-control" id="dish" name="dish" type="text" value="">{{recipe.dish}}</textarea>
-  </div>
-  <div class=" col-md-12">
-    <label for="exampleFormControlTextarea1">Time</label>
-    <textarea class="form-control" id="time" name="time" type="text" value="">{{recipe.time}}</textarea>
-  </div>
-  <div class="col-md-12">
-    <label for="exampleFormControlTextarea1">Cost</label>
-    <textarea class="form-control" id="cost" name="cost" type="text" value="">{{recipe.cost}}</textarea>
-  </div>
-  <div class="col-md-12">
-    <label for="exampleFormControlTextarea1">Ingredients</label>
-    <textarea class="form-control" id="ingredients" name="ingredients" type="text" value="">{{recipe.ingredients}}</textarea>
-  </div>
-   <div class="col-md-12">
-    <label for="exampleFormControlTextarea1">Preparation</label>
-    <textarea class="form-control" id="preparation" name="preparation" type="text" value="">{{recipe.preparation}}</textarea>
-  </div>
-  <button class="btn btn-primary col-md-4" type="submit">Update Recipe
-    <i class="">send</i>
-  </button>
-  
-</div>
-</div>
-</form>
+	<div class="container">
+		<div class="row">
+			<div class="form-group container-fluid col-md-12">
 
+				<select class="form-control" id="menu_type" name="menu_type">
+                    {% for recipe in recipes %}
+                        <option>{{ recipe.menu_type }}</option>
+                    {% endfor %}
+                </select>
+
+			</div>
+			<div class=" col-md-12">
+				<label for="exampleFormControlTextarea1">Dish</label>
+				<textarea class="form-control" id="dish" name="dish" type="text" value="">{{recipe.dish}}</textarea>
+			</div>
+			<div class=" col-md-12">
+				<label for="exampleFormControlTextarea1">Time</label>
+				<textarea class="form-control" id="time" name="time" type="text" value="">{{recipe.time}}</textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Cost</label>
+				<textarea class="form-control" id="cost" name="cost" type="text" value="">{{recipe.cost}}</textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Ingredients</label>
+				<textarea class="form-control" id="ingredients" name="ingredients" type="text" value="">{{recipe.ingredients}}</textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Preparation</label>
+				<textarea class="form-control" id="preparation" name="preparation" type="text" value="">{{recipe.preparation}}</textarea>
+			</div>
+			<button class="btn btn-primary col-md-4" type="submit">Update Recipe
+                <i class="">send</i>
+            </button>
+
+		</div>
+	</div>
+</form>
 
 
 {% endblock %}

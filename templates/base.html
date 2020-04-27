@@ -40,6 +40,7 @@
     </ul>
     </div>
   </nav>
+</header>
       
 
   <!-- Page Header -->
@@ -47,54 +48,51 @@
    <div class="header-img header">
         <div class="row col-md-12">
             <div class="row col-xs-12 col-md-12  text-center">
-                <h1 class="heading-1 text-center"> H's Savings Cook Book </h1>
+                <h1 class="heading-1"> H's Savings Cook Book </h1>
             </div>
         </div>
 
     </div>
 
   <!-- Main Content -->
-   <div class="container">
+   <div class="container-fluid">
         {% block content %} {% endblock %}
     </div>
 
 
   <!-- Footer -->
-  <footer>
-     <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; </p>
+  <footer class="container-fluid">
+        <div>
+            <div id="footer-details" class="row">
+                <div class="col-sm-4">
+                <h5 class="uppercase general-sub">About</h5>
+                <p class="inline-block">
+                    Full Stack Web Developer. Skilled in coding languages such as HTML5, CSS3, 
+                    JavaScript and many more. Alongside, I have the experience to structure and
+                    design a website.
+                </p>
+                </div>
+                <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Download My CV</h5>
+                <p class="inline-block">
+                    Need a printable version of my CV? Download here.
+                    <a href="#" class="cv.pdf"><i class="fa fa-download" aria-hidden="true"></i></a>
+                </p>
+                </div>
+                <div class="col-sm-4">
+                <h5 class="uppercase general-sub">My Social</h5>
+                <ul class="list-inline social-links">
+                    <li><a target="_blank" href="#"><i class=" fa fa-facebook"></i></a></li>
+                    <li><a target="_blank" href="#"><i class=" fa fa-twitter"></i></a></li>
+                    <li><a target="_blank" href="#"><i class=" fa fa-linkedin"></i></a></li>
+                    <li><a target="_blank" href="#"><i class=" fa fa-pinterest"></i></a></li>
+                    <li><a target="_blank" href="#"><i class=" fa fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="#"><i class=" fa fa-youtube"></i></a></li>
+                </ul>
                 </div>
             </div>
         </div>
-  </footer>
+    </footer>
   
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -28,8 +28,8 @@ def get_menu_details(menu_type):
     elif menu_type == 'dinner':
         title = 'Dinner Menu'
     elif menu_type == 'dessert':
-        title = 'Dinner Menu'
-    return render_template('menu_details.html', recipes=mongo.db.recipes.find({"menu_type": menu_type}), title=title)
+        title = 'Dessert Menu'
+    return render_template('menu_details.html', recipes=mongo.db.recipes.find({ "menu_type": menu_type}), title=title)
 
 
 @app.route('/menus/add_recipe')

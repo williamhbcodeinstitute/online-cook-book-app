@@ -1,42 +1,44 @@
 {% extends 'base.html' %} {% block content %}
 
 <h3> Add Recipe </h3>
-<form class="form-group" action ="{{ url_for('insert_recipe') }}" method="POST" name="recipes">
-  <div class="container">
-            <div class="row">
-  <div class="row form-group container-fluid col-md-12">
-    
-    <select class="form-control" id="menu_type" name="menu_type">
-      {% for menu in menus %}
-      <option >{{ menu.menu_type }}</option>
-      {% endfor %}
-    </select>
-  </div>
-  <div class="row col-md-12">
-    <label for="exampleFormControlTextarea1">Dish</label>
-    <textarea class="form-control" id="dish" name="dish" type="text"></textarea>
-  </div>
-  <div class="row col-md-12">
-    <label for="exampleFormControlTextarea1">Time</label>
-    <textarea class="form-control" id="time" name="time" type="text"></textarea>
-  </div>
-  <div class="row col-md-12">
-    <label for="exampleFormControlTextarea1">Cost</label>
-    <textarea class="form-control" id="cost" name="cost" type="text"></textarea>
-  </div>
-  <div class="row col-md-12">
-    <label for="exampleFormControlTextarea1">Ingredients</label>
-    <textarea class="form-control" id="ingredients" name="ingredients" type="text"></textarea>
-  </div>
-   <div class="row col-md-12">
-    <label for="exampleFormControlTextarea1">Preparation</label>
-    <textarea class="form-control" id="preparation" name="preparation" type="text"></textarea>
-  </div>
-  <button class="row btn btn-primary col-md-4" type="submit">Add Recipe
-    <i class="">send</i>
-  </button>
-  </div>
-</div>
+<form class="form-group" action="{{ url_for('insert_recipe') }}" method="POST" name="recipes">
+	<div class="container">
+		<div class="row">
+			<div class="form-group container-fluid col-md-12">
+
+				<select class="form-control" id="menu_type" name="menu_type">
+                   {% for menu in menus %}
+                        <option >{{ menu.menu_type }}</option>
+                    {% endfor %}
+                </select>
+
+			</div>
+			<div class=" col-md-12">
+				<label for="exampleFormControlTextarea1">Dish</label>
+				<textarea class="form-control" id="dish" name="dish" type="text" value=""></textarea>
+			</div>
+			<div class=" col-md-12">
+				<label for="exampleFormControlTextarea1">Time</label>
+				<textarea class="form-control" id="time" name="time" type="text" value=""></textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Cost</label>
+				<textarea class="form-control" id="cost" name="cost" type="text" value=""></textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Ingredients</label>
+				<textarea class="form-control" id="ingredients" name="ingredients" type="text" value=""></textarea>
+			</div>
+			<div class="col-md-12">
+				<label for="exampleFormControlTextarea1">Preparation</label>
+				<textarea class="form-control" id="preparation" name="preparation" type="text" value=""></textarea>
+			</div>
+			<button class="row btn btn-primary col-md-4" type="submit">Add Recipe
+                <i class="">send</i>
+            </button>
+
+		</div>
+	</div>
 </form>
 
 

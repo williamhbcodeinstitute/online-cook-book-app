@@ -1,24 +1,24 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container-fluid col-md-6">
+<div class="container-fluid col-md-12">
 	<div class="row">
 		<div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
-			<div class="post-preview">
+			<div class="post-preview ">
 				<h2 class="post-title">
 					{{ title }}
 				</h2>
 			</div>
 			<hr>
-			<div class="col-lg-8 col-md-10 mx-auto">
-			</div>
+			<div class="col-lg-8 col-md-12 mx-auto">
+			
 			{% for recipe in recipes %}
-			<div class="post-preview">
+			<div class="post-preview ">
 				<a href="{{url_for('get_menus')}}">
 					<h3 class="post-title">
 						{{ recipe.dish }}
 					</h3>
 				</a>
 
-				<p class="post-meta">
+				<p class="post-meta text">
                 <span>Time :</span>
                    {{ recipe.time }}
                 </p>
@@ -27,17 +27,29 @@
                   {{ recipe.cost }}
                 </p>
                 <p>
-                <span>Ingredients :</span>
-                  {{ recipe.ingredients }}
+                    <span>Ingredients :</span>
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+                            <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
                 </p>
                 <p>
-                <span>Preparation :</span>
-					{{ recipe.preparation }}
+                    <span>Preparation :</span>
+                    <ul>
+                        {% for prep in recipe.preparation %}
+                            <li>{{ prep }}</li>
+                        {% endfor %}
+                    </ul>
 				</p>
 			</div>
-            <div class="clearfix row ">
-				<a class="btn btn-primary" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete recipe &rarr;</a>
-                <a class="btn btn-primary" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit recipe &rarr;</a>
+            <div class="clearfix row  ">
+              <div class="col-md-6">
+				<a class="btn btn-primary " href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete recipe </a>
+              </div>
+              <div class="col-md-6">
+                <a class="btn btn-primary" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit recipe </a>
+              </div>
 			</div>
             {% endfor %}
 			<hr>
