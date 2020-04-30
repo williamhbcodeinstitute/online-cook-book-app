@@ -1,35 +1,64 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+#Milestone Project 3: Online Cook Book.
 
-Welcome williamhbcodeinstitute,
+##UX
+_____
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+The task for this project was to design an online cook book that uses a database to access and display the 
+information on the webpage. The two choices of databases to be used are SQL and MongoDB. I chose MongoDB for my
+project which is a flat based style of database meaning no nesting is required with ID's. I designed the site
+based on a savers cook book which includes cheap and easy meals to cook from scratch. I wanted the user to
+be able to follow the CRUD functionality of Create, Read, Edit and Delete. You can find the wireframes for
+the site  in a seperate directory named **"static/wireframes"** embedded in my project.
 
-## Gitpod Reminders
+##Features
+___________
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+My site includes six pages home, add recipe menus/breakfast/lunch/dinner/dessert. 
 
-`python3 -m http.server`
+1.index.html: This file is for the home page of the site and includes the the four menus to select from, with 
+an appropriate image displayed above each one. Each of the menu h2's is an anchor tag that when clicked will
+take you to the recipe page for that type of meal e.g. clicking breakfast takes you the breakfast recipe page.
+If you do not choose to navigate through the site this way you can also click the dropdown box on the navigation
+bar titled 'Menu' and select through there.
 
-A blue button should appear to click: *Expose*,
+2.base.html: Includes the general layout that will be displayed over each page on the site. This will be the
+layout for the navigation bar, heading and footer. The footer section contains links to social media pages.
 
-Another blue button should appear to click: *Open Browser*.
+3.menu_details.html: This page will show the different type of menu. Using a function in my app.py file named
+'get_menu_details' the type of menu that will be rendered depends on which one clicked e.g. breakfast, luch or dinner and 
+displayes the title depending on each selected. This page includes seperate buttons to delete and edit a recipe.
+Clicking the edit recipe button takes you to 'editrecipe.html' which has a form where you can edit each section
+of the recipe, after making these changes there is a button at the bottom of the form that when clicked updates
+the data to MongoDB and the site.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+4.addrecipe.html: The add recipe page includes a similar styled form to the edit recipe page but rather than
+already having data from a previous recipe, this form has empty fields for the user to fill in that will add
+a new recipe to the database. The user can get to this page via the navbar by selecting the add recipe link.
+After doing this the site will re-direct you to the home page.
 
-A blue button should appear to click: *Expose*,
+##Technologies used
+______________________
 
-Another blue button should appear to click: *Open Browser*.
+The languages used in this project are HTML5, CSS3 and Python3. I imported Flask for the functions used
+and PyMongo so Flask could work with MongoDB. I also used bootstrap libraries for the HTML layouts and some
+of the styling and javascript functionality.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+Links to libraries;
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+"https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
 
-## Updates Since The Instructional Video
+##Testing
+___________
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+i. firstly I started with an individual page and function for breakfast, lunch, dinner, dessert. But decided to reduce
+the repetition of code to condense to one page named menu_details.html. Using an if statement in my app.py file, Flask
+is able to render the page suited for which menu_type that is selected.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ii. To use the form for addrecipe.html you start by using a dropdown select menu which gives the options of menu_type.
+Following this are textarea boxes that can be used to fill in the other parts of the information for the database e.g.
+Dish, Cost, Time, Ingredients and Preparation. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
-
-Happy coding!

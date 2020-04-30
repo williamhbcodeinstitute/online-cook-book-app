@@ -9,7 +9,7 @@
 			</div>
 			<hr>
 			<div class="col-lg-8 col-md-12 mx-auto">
-			
+			<!-- for loop to find items inside recipes-->
 			{% for recipe in recipes %}
 			<div class="post-preview ">
 				<a href="{{url_for('get_menus')}}">
@@ -29,6 +29,7 @@
                 <p>
                     <span>Ingredients :</span>
                     <ul>
+                    <!--Nested for loop to display in a list-->
                         {% for ingredient in recipe.ingredients %}
                             <li>{{ ingredient }}</li>
                         {% endfor %}
@@ -43,6 +44,7 @@
                     </ul>
 				</p>
 			</div>
+            <!--buttons for delete and add recipe-->
             <div class="clearfix row  ">
               <div class="col-md-6">
 				<a class="btn btn-primary " href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete recipe </a>
@@ -53,9 +55,6 @@
 			</div>
             {% endfor %}
 			<hr>
-			
-
-			<!-- Pager -->
 			
 		</div>
 	</div>

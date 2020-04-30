@@ -4,7 +4,6 @@
 .form-group {
     display: block;
     width: 100%;
-    /* height: 34px; */
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -22,19 +21,18 @@ body {
 h1 {
     font-size: 3rem;
     padding: 20px 20px;
+    text-align: center;
 }
 
-h2 {
+h2, 
+h3
+   {
     font-size: 2rem;
     padding: 20px 10px;
     text-align: center;
 }
 
-h3  {
-    font-size: 2rem;
-    padding: 20px 10px;
-    text-align: center;
-}
+
 
 
 .header-img {
@@ -68,6 +66,16 @@ button[type="submit"]{
     background-color: rgba(169, 169, 169, 0.39);
     line-height: 30px;
     max-width: 100%;
+}
+
+.navbar a:hover {
+    background:  #e67e22;
+    padding: 5px 5px;
+    border-radius: 20px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 .text {
