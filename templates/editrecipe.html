@@ -2,14 +2,15 @@
 
 
 <h3> Edit Recipe </h3>
+<!--Form to edit recipe-->
 <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col-md-12">
 	<div class="container">
 		<div class="row">
 			<div class="form-group container-fluid col-md-12">
 
 				<select class="form-control" id="menu_type" name="menu_type">
-                    {% for recipe in recipes %}
-                        <option>{{ recipe.menu_type }}</option>
+                    {% for menu in menus %}
+                        <option >{{ menu.menu_type }}</option>
                     {% endfor %}
                 </select>
 

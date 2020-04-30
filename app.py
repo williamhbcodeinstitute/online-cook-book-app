@@ -45,9 +45,9 @@ def insert_recipe():
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_recipes = mongo.db.recipes.find()
+    all_menus = mongo.db.menu.find() 
     return render_template('editrecipe.html', recipe=the_recipe,
-                           recipes=all_recipes)
+                           menus=all_menus)
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):

@@ -30,17 +30,17 @@
                     <span>Ingredients :</span>
                     <ul>
                     <!--Nested for loop to display in a list-->
-                        {% for ingredient in recipe.ingredients %}
-                            <li>{{ ingredient }}</li>
-                        {% endfor %}
+                    
+                            <li>{{ recipe.ingredients }}</li>
+                        
                     </ul>
                 </p>
                 <p>
                     <span>Preparation :</span>
                     <ul>
-                        {% for prep in recipe.preparation %}
-                            <li>{{ prep }}</li>
-                        {% endfor %}
+                        
+                            <li>{{ recipe.preparation }}</li>
+                        
                     </ul>
 				</p>
 			</div>
