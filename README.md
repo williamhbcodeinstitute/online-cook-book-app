@@ -61,4 +61,11 @@ ii. To use the form for addrecipe.html you start by using a dropdown select menu
 Following this are textarea boxes that can be used to fill in the other parts of the information for the database e.g.
 Dish, Cost, Time, Ingredients and Preparation. 
 
+iii. Testing the layout of index.html I decided it would be visably better for the images to be displayed in two
+seperate rows to cover more of the page leaving less empty spaces.
+
+iv. With the drop down menu on edit_recipe it is always set to 'breakfast' as default which could confuse the
+user updating the recipe. For the future I would create another if statement to show the menu_type that had been
+selected.
+
 
