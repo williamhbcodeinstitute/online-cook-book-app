@@ -1,6 +1,6 @@
-#Milestone Project 3: Online Cook Book.
+# Milestone Project 3: Online Cook Book.
 
-##UX
+## UX
 _____
 
 The task for this project was to design an online cook book that uses a database to access and display the 
@@ -10,7 +10,7 @@ based on a savers cook book which includes cheap and easy meals to cook from scr
 be able to follow the CRUD functionality of Create, Read, Edit and Delete. You can find the wireframes for
 the site  in a seperate directory named **"static/wireframes"** embedded in my project.
 
-##Features
+## Features
 ___________
 
 My site includes six pages home, add recipe menus/breakfast/lunch/dinner/dessert. 
@@ -36,7 +36,7 @@ already having data from a previous recipe, this form has empty fields for the u
 a new recipe to the database. The user can get to this page via the navbar by selecting the add recipe link.
 After doing this the site will re-direct you to the home page.
 
-##Technologies used
+## Technologies used
 ______________________
 
 The languages used in this project are HTML5, CSS3 and Python3. I imported Flask for the functions used
@@ -50,7 +50,7 @@ Links to libraries;
 "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
 "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
 
-##Testing
+## Testing
 ___________
 
 i. firstly I started with an individual page and function for breakfast, lunch, dinner, dessert. But decided to reduce

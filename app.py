@@ -15,7 +15,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/menus')
 def get_menus():
-    return render_template("index.html", menus=mongo.db.menu.find())
+    return render_template("index.html", menus=list(mongo.db.menu.find()))
 
 
 @app.route('/menu/<menu_type>')
@@ -34,7 +34,7 @@ def get_menu_details(menu_type):
 
 @app.route('/menus/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html",  menus=mongo.db.menu.find())
+    return render_template("add_recipe.html",  list(menus=mongo.db.menu.find()))
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -46,7 +46,7 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_menus = mongo.db.menu.find() 
-    return render_template('editrecipe.html', recipe=the_recipe,
+    return render_template('edit_recipe.html', recipe=the_recipe,
                            menus=all_menus)
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])

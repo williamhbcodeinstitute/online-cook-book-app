@@ -1,32 +1,61 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container-fluid col-md-6">
+
+<!-- Why do you have col-md-6???? -->
+<div class="container-fluid">  
 	<div class="row">
-		<div class="col-lg-8 col-md-6 col-sm-12 mx-auto">
-			<div class="">
-				<h2 class="">
-					Explore Our Menus!
-				</h2>
-			</div>
+        <!-- This div is uncloses -->
+		<div class="col-lg-8 col-md-12 col-sm-6 mx-auto">
+			<h2>
+			Explore Our Menus!
+			</h2>
+			
+        
 			<hr>
-			<div class="col-lg-8 col-md-10 mx-auto">
-			</div>
-			{% for menu in menus %}
-			<div class="post-preview">
-				<img src= "{{ menu.img }}" class="media-object col-md-12 height=100 width=100" >
-				<a href="{{url_for('get_menu_details', menu_type=menu.menu_type|lower)}}">
-					<h3 class="post-title ">
-						{{ menu.menu_type }}
-					</h3>
-				</a>
-				<p class="post-meta">Click above to view menu</p>
-			</div>
-			<hr>
-			{% endfor %}
-			<hr>
-		
-		</div>
+            <!--  row inside a div and then you have added extra overriding rules -->
+			<div class=" row ">
+            <!-- Anything with a 12 in it goes all the way across the page -->
+				
+					{% for menu in menus %}
+                    <div class="col-md-6 text-center post-preview">
+					{% if menu.menu_type == 'breakfast' or menu.menu_type == 'lunch' %}
+                    
+					<img src= "{{ menu.img }}" class="media-object col-md-6 height=100 width=100" >
+					<a href="{{url_for('get_menu_details', menu_type=menu.menu_type|lower)}}">
+						<h3 class="post-title ">
+							{{menu.menu_type}}
+						</h3>
+					</a>
+
+					{% endif %}
+					<hr>
+                    </div>
+					{% endfor %}
+				
+            </div>
+            <div class=" row ">
+            <!-- Anything with a 12 in it goes all the way across the page -->
+				
+					{% for menu in menus %}
+                    <div class="col-md-6 text-center post-preview">
+					{% if menu.menu_type == 'dinner' or menu.menu_type == 'dessert' %}
+                    
+					<img src= "{{ menu.img }}" class="media-object col-md-6 height=100 width=100" >
+					<a href="{{url_for('get_menu_details', menu_type=menu.menu_type|lower)}}">
+						<h3 class="post-title ">
+							{{menu.menu_type}}
+						</h3>
+					</a>
+
+					{% endif %}
+					<hr>
+                    </div>
+					{% endfor %}
+				</div>
+            </div>
+        </div>
 	</div>
-</div>
+    <hr>
+
 
 {% endblock %}
