@@ -34,9 +34,9 @@ def get_menu_details(menu_type):
 
 @app.route('/menus/add_recipe')
 def add_recipe():
-    return render_template("add_recipe.html",  list(menus=mongo.db.menu.find())
+    return render_template("add_recipe.html",  menus=mongo.db.menu.find())
 
-@app.route('/insert_recipe', methods=['POST']))
+@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
